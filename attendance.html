@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+
+  <style>
+    body {
+      background-image: url('C:/Users/LENOVO/Desktop/New folder/download 2.avif');
+     background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    #logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+  #logo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border: 2px solid transparent; /* Set border color to transparent */
+  margin-top: 20px;
+}
+
+
+    #ministry-text {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #other-text {
+      font-size: 18px;
+    }
+
+    #attendance-list {
+      font-size: 20px;
+      text-decoration: underline;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-size: 18px; /* Increased font size for questions */
+      margin-bottom: 5px;
+      text-align: left;
+      color: #006400; /* Dark green text color */
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px; /* Increased font size for input areas */
+      margin-bottom: 10px; /* Adjusted bottom margin */
+    }
+
+    .input-group {
+      grid-column: span 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #signatureCanvas {
+      border: 2px solid #006400; /* Dark green border for the signature canvas */
+      border-radius: 5px;
+      margin-top: 10px;
+      grid-column: span 2;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50; /* Green submit button color */
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      grid-column: span 2;
+      transition: background-color 0.3s; /* Added transition for a smooth hover effect */
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049; /* Darker green on hover */
+    }
+
+    .validation-message {
+      color: #ffcc00; /* Yellow color for validation messages */
+      font-size: 14px;
+      margin-top: 10px; /* Adjusted top margin */
+    }
+  </style>
+
+
+  </style>
+</head>
+
+<body>
+  <div id="logo-container">
+    <h2>COUNTY GOVERNMENT OF KITUI</h2>
+       <img id="logo" src="https://kitui.go.ke/storage/2020/07/cropped-Image-1.png" alt="County Government of Kitui Logo">
+    <h3>MINISTRY OF CULTURE, GENDER, YOUTH, ICT, SPORTS AND SOCIAL SERVICES.</h3>
+	 <p id="registration-form"><u>Registration Form</u></p>
+
+  </div>
+
+  
+  <form id="registrationForm" action="http://localhost/Attendance%20List/submit_registration.php" method="post">
+    <div class="input-group">
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" name="surname" required>
+    </div>
+
+    <div class="input-group">
+      <label for="other_names">Other Names:</label>
+      <input type="text" id="other_names" name="other_names" required>
+    </div>
+
+    <div class="input-group">
+      <label for="county">County:</label>
+      <select id="county" name="county">
+   <option value="Mombasa">Mombasa</option>
+    <option value="Kwale">Kwale</option>
+  <option value="Kilifi">Kilifi</option>
+  <option value="Tana River">Tana River</option>
+  <option value="Lamu">Lamu</option>
+  <option value="Taita/Taveta">Taita/Taveta</option>
+  <option value="Garissa">Garissa</option>
+  <option value="Wajir">Wajir</option>
+  <option value="Mandera">Mandera</option>
+  <option value="Marsabit">Marsabit</option>
+  <option value="Isiolo">Isiolo</option>
+  <option value="Meru">Meru</option>
+  <option value="Tharaka-Nithi">Tharaka-Nithi</option>
+  <option value="Embu">Embu</option>
+  <option value="Kitui">Kitui</option>
+  <option value="Machakos">Machakos</option>
+  <option value="Makueni">Makueni</option>
+  <option value="Nyandarua">Nyandarua</option>
+  <option value="Nyeri">Nyeri</option>
+  <option value="Kirinyaga">Kirinyaga</option>
+  <option value="Murang'a">Murang'a</option>
+  <option value="Kiambu">Kiambu</option>
+  <option value="Turkana">Turkana</option>
+  <option value="West Pokot">West Pokot</option>
+  <option value="Samburu">Samburu</option>
+  <option value="Trans Nzoia">Trans Nzoia</option>
+  <option value="Uasin Gishu">Uasin Gishu</option>
+  <option value="Elgeyo/Marakwet">Elgeyo/Marakwet</option>
+  <option value="Nandi">Nandi</option>
+  <option value="Baringo">Baringo</option>
+  <option value="Laikipia">Laikipia</option>
+  <option value="Nakuru">Nakuru</option>
+  <option value="Narok">Narok</option>
+  <option value="Kajiado">Kajiado</option>
+  <option value="Kericho">Kericho</option>
+  <option value="Bomet">Bomet</option>
+  <option value="Kakamega">Kakamega</option>
+  <option value="Vihiga">Vihiga</option>
+  <option value="Bungoma">Bungoma</option>
+  <option value="Busia">Busia</option>
+  <option value="Siaya">Siaya</option>
+  <option value="Kisumu">Kisumu</option>
+  <option value="Homa Bay">Homa Bay</option>
+  <option value="Migori">Migori</option>
+  <option value="Kisii">Kisii</option>
+  <option value="Nyamira">Nyamira</option>
+  <option value="Nairobi City">Nairobi City</option>
+  
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="ministry">Ministry:</label>
+      <input type="text" id="ministry" name="ministry" required>
+    </div>
+
+    <div class="input-group">
+      <label for="department">Department:</label>
+      <input type="text" id="department" name="department" required>
+    </div>
+
+    <div class="input-group">
+      <label for="designation">Designation:</label>
+      <input type="text" id="designation" name="designation" required>
+    </div>
+
+    <div class="input-group">
+      <label for="personal_number">Personal Number:</label>
+      <input type="text" id="personal_number" name="personal_number" required>
+    </div>
+
+    <div class="input-group">
+      <label for="phone_number">Phone Number:</label>
+      <input type="tel" id="phone_number" name="phone_number" required pattern="[0-9]{10}">
+    </div>
+
+    <div class="input-group">
+      <label for="signature">Signature:</label>
+      <canvas id="signatureCanvas" width="400" height="200"></canvas>
+      <input type="hidden" id="signatureData" name="signatureData" required>
+    </div>
+
+    <input type ="submit" input value = "Submit"
+
+    <p class="validation-message">* Please fill out all required fields.</p>
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Your existing script
+
+      var form = document.getElementById('registrationForm');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Check if all required fields are filled
+        if (validateForm()) {
+          var formData = new FormData(form);
+
+          fetch(form.action, {
+              method: 'POST',
+              body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                alert(data.message);
+                // Additional success logic (if needed)
+              } else {
+                alert(data.message);
+                // Additional error logic (if needed)
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              // Additional error handling logic (if needed)
+            });
+        } else {
+          alert('Please fill out all required fields.');
+        }
+      });
+
+      var canvas = document.getElementById('signatureCanvas');
+      var signaturePad = new SignaturePad(canvas);
+
+      signaturePad.onEnd = function () {
+        document.getElementById('signatureData').value = signaturePad.toDataURL();
+      };
+
+      function validateForm() {
+        // Check if all required fields are filled
+        var requiredFields = form.querySelectorAll('[required]');
+        for (var i = 0; i < requiredFields.length; i++) {
+          if (!requiredFields[i].value) {
+            return false;
+          }
+        }
+        return true;
+      }
+    });
+  </script>
+</body>
+
+</html>
